@@ -1,0 +1,20 @@
+Producing JSON from java object can be done in 3 different ways
+1.Producingwithbindingapi   -  Better one .simple coode.less prone to errors.
+2.Producingwithgenerator  - few lines of code .still not sufficient compared to bindingapi
+3.ProducingwithStringformat - lot of codes. more error prone
+
+
+DOM: Document object Model - API for describing logical strcuture of JSON
+1.ConsumingwithDomApi   (use file where json present)
+2.DomBankApplicationServlet   use below posting. it is servlet request where we sent the file.
+
+curl -s -X POST http://localhost:8000/ -d @"src/main/java/guru/springframework/jsonexample/bank_loan.json" --header "Content-Type: application/json"
+
+3.ConsumingwithBindingApi
+4.BindingBankApplicationServlet
+5.AdvancedConsumingWithBindingApi - using some annotations we canc achieve deserialize
+
+
+Consuming with Stream API: (Fastest parsing API)
+  when we have unstrcutured json , then we can use stream api . Refer ConsumingWithStreamApi for example
+

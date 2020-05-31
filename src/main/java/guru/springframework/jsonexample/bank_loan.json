@@ -1,0 +1,26 @@
+{
+  "name": "RaguKumar Ganesan",
+  "purposeOfLoan": "to build extension to my house",
+  "loanDetails": {
+    "amount": 1000000,
+    "startDate": "2018-01-15",
+    "endDate": "2020-02-20"
+  },
+  "jobs": [
+    {
+     "title": "Freelance Developer",
+      "annualIncome": 18000,
+      "yearsActive": 3
+    },
+    {
+      "title": "KBC Developer",
+      "annualIncome": 18000,
+      "yearsActive": 3
+    },
+    {
+      "title": "co founder Developer",
+      "annualIncome": 25000,
+      "yearsActive": 3
+    }
+  ]
+}

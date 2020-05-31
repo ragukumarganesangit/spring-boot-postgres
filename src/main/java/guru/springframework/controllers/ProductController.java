@@ -2,7 +2,7 @@ package guru.springframework.controllers;
 
 import guru.springframework.commands.ProductForm;
 import guru.springframework.converters.ProductToProductForm;
-import guru.springframework.domain.Product;
+import guru.springframework.domain.Itemtable;
 import guru.springframework.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -52,7 +52,7 @@ public class ProductController {
 
     @RequestMapping("product/edit/{id}")
     public String edit(@PathVariable String id, Model model){
-        Product product = productService.getById(Long.valueOf(id));
+        Itemtable product = productService.getById(Long.valueOf(id));
         ProductForm productForm = productToProductForm.convert(product);
 
         model.addAttribute("productForm", productForm);
@@ -72,7 +72,7 @@ public class ProductController {
             return "product/productform";
         }
 
-        Product savedProduct = productService.saveOrUpdateProductForm(productForm);
+        Itemtable savedProduct = productService.saveOrUpdateProductForm(productForm);
 
         return "redirect:/product/show/" + savedProduct.getId();
     }

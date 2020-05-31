@@ -1,6 +1,6 @@
 package guru.springframework.repositories;
 
-import guru.springframework.domain.Product;
+import guru.springframework.domain.Itemtable;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class ProductRepositoryTest {
+public class ItemtableRepositoryTest {
 
     private static final BigDecimal BIG_DECIMAL_100 = BigDecimal.valueOf(100.00);
     private static final String PRODUCT_DESCRIPTION = "a cool product";
@@ -30,7 +30,7 @@ public class ProductRepositoryTest {
     @Test
     public void testPersistence() {
         //given
-        Product product = new Product();
+        Itemtable product = new Itemtable();
         product.setDescription(PRODUCT_DESCRIPTION);
         product.setImageUrl(IMAGE_URL);
         product.setPrice(BIG_DECIMAL_100);
@@ -40,7 +40,7 @@ public class ProductRepositoryTest {
 
         //then
         Assert.assertNotNull(product.getId());
-        Product newProduct = productRepository.findById(product.getId()).orElse(null);
+        Itemtable newProduct = productRepository.findById(product.getId()).orElse(null);
         Assert.assertEquals((Long) 1L, newProduct.getId());
         Assert.assertEquals(PRODUCT_DESCRIPTION, newProduct.getDescription());
         Assert.assertEquals(BIG_DECIMAL_100.compareTo(newProduct.getPrice()), 0);

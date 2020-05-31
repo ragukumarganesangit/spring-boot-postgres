@@ -1,7 +1,7 @@
 package guru.springframework.converters;
 
 import guru.springframework.commands.ProductForm;
-import guru.springframework.domain.Product;
+import guru.springframework.domain.Itemtable;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
  * Created by jt on 1/10/17.
  */
 @Component
-public class ProductToProductForm implements Converter<Product, ProductForm> {
+public class ProductToProductForm implements Converter<Itemtable, ProductForm> {
     @Override
-    public ProductForm convert(Product product) {
+    public ProductForm convert(Itemtable product) {
         ProductForm productForm = new ProductForm();
         productForm.setId(product.getId());
         productForm.setDescription(product.getDescription());
