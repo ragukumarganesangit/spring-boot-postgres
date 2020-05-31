@@ -9,6 +9,7 @@ import java.io.IOException;
 //This is another way of serializing java object to json using Generator API
 
 public class ProducingWithGenerator {
+
     public static void main(String args[]) throws IOException {
         LoanApplication loanApplication = ExampleLoan.LOAN_APPLICATION;
         System.out.println(loanApplication);
@@ -22,7 +23,7 @@ public class ProducingWithGenerator {
         generator.setPrettyPrinter(new DefaultPrettyPrinter());
         generator.writeStartObject();
         generator.writeStringField("name", loanApplication.getName());
-        generator.writeStringField("purposeOfLoan",loanApplication.getPurposeOfLoan());
+        generator.writeStringField("purposeOfLoan", loanApplication.getPurposeOfLoan());
         generator.writeFieldName("loanDetails");
         generator.writeStartObject();
         generator.writeNumberField("amount", loanApplication.getLoanDetails().getAmount());
@@ -31,12 +32,12 @@ public class ProducingWithGenerator {
         generator.writeEndObject();
         generator.writeFieldName("jobs");
         generator.writeStartArray();
-        for (final Job current: loanApplication.getJobs()){
-            generator.writeStartObject();
-            generator.writeStringField("title", current.getTitle());
-            generator.writeNumberField("annualIncome", current.getAnnualIncome());
-            generator.writeNumberField("yearsActive", current.getYearsActive());
-            generator.writeEndObject();
+        for (final Job current : loanApplication.getJobs ()) {
+            generator.writeStartObject ();
+            generator.writeStringField ( "title", current.getTitle () );
+            generator.writeNumberField ( "annualIncome", current.getAnnualIncome () );
+            generator.writeNumberField ( "yearsActive", current.getYearsActive () );
+            generator.writeEndObject ();
         }
 
         generator.writeEndArray();
