@@ -36,7 +36,7 @@ public class FunctionalInterfaceExample {
 }
 
 
-@FunctionalInterface
+@FunctionalInterface    //if we add this we cannot add more abstract methods
 interface Converter<F, T> {
     T convert(F from);
     //F method3(T from);   you are not allowed to add more than one abstract method

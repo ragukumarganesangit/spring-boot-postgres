@@ -31,14 +31,6 @@ public class ScopeOfvariableINLambda {
                 (from) -> String.valueOf(from + num2);
         //num2 = 3;    ==> i cannot assing value for this , then error because num2 implicilty refers as final
 
-        //examples of some of new function of java8 with respect to predicate
-
-        Predicate<String> predicate = (s) -> s.length() > 0;
-
-        predicate.test("foo");              // true
-        predicate.negate().test("foo");     // false
-
-        Predicate<Boolean> nonNull = Objects::nonNull;
     }
 
 }
